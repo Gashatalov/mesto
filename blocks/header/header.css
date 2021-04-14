@@ -1,0 +1,18 @@
+.header {
+  padding-top: 45px;
+  max-width: 880px;
+  min-height: 74px;
+  margin: 0 auto;
+  position: relative;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid #545454;
+  opacity: .7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
