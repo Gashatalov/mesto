@@ -19,7 +19,7 @@
     <section class="profile">
       <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
       <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто <div class="profile__edit-button"></div></h1>
+        <h1 class="profile__name">Жак-Ив Кусто <div class="profile__edit-button"  onclick="openPopup()"></div></h1>
         <h2 class="profile__work">Исследователь океана</h2>
       </div>
 
@@ -78,6 +78,25 @@
 
     </section>
 
+    <section class="popup popup_opened">
+
+
+      <div class="popup__container">
+        <img class="popup__close" src="./images/close_icon.png" alt="закрытие попапа" onclick="closePopup()">
+
+        <form>
+          <p class="popup__header">Редактировать профиль</p>
+          <input type="text">
+          <input type="text">
+
+          <input type="submit">
+        </form>
+
+        <div></div>
+      </div>
+
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -86,5 +105,7 @@
 
   </footer>
 
+  <script src="./blocks/popup/__close/popup__close.js"></script>
+  <script src="./blocks/profile/__edit-button/profile__edit-button.js"></script>
 </body>
 </html>
