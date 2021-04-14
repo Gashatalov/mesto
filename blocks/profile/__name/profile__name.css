@@ -9,5 +9,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-
+  display: flex;
+  align-items: baseline;
+  position: relative;
 }
+
+@media (max-width: 450px) {
+  .profile__name {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
+

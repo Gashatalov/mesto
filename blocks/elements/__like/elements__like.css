@@ -1,14 +1,17 @@
  .elements__like {
-   height: 19px;
-
-
-
+   height: 25px;
+   width: 25px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(../../../images/like.svg);
  }
 
+ .elements__like:hover {
+  background-image: url(../../../images/like_hover.svg);
+  cursor: pointer;
+ }
 
-
-
- /* Для иконки сердечка подготовьте сразу и активное состояние
-  — иконка должна закрашиваться чёрным. Сейчас это не пригодится,
-   но потребуется в следующем спринте. */
-
+ .elements__like:active {
+  background-image: url(../../../images/like_active.png);
+  cursor: pointer;
+ }
