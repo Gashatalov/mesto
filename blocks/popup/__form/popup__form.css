@@ -3,7 +3,12 @@
   min-height: 100%;
   flex-direction: column;
   padding: 34px 36px 37px;
-
-
-
 }
+
+@media (max-width: 550px) {
+  .popup__form {
+padding: 25px 22px;
+  }
+}
+
+

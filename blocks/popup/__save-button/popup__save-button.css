@@ -6,10 +6,22 @@
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 21px;
   color: #ffffff;
   padding: 14px 0 18px;
-
   margin-top: 28px;
+  transition: .3s, linear;
+}
 
+.popup__save-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media (max-width: 550px) {
+  .popup__save-button {
+    padding: 12px 0 16px;
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

@@ -5,7 +5,8 @@
   flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 3px;
+  list-style: none;
 }
 
 
