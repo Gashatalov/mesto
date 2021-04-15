@@ -7,7 +7,6 @@ function openPopup() {
 }
 
 /* вставка данных пользователя в поля формы */
-
 let userName = document.querySelector('.profile__name');
 let userWork = document.querySelector('.profile__work');
 
