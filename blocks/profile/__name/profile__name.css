@@ -11,7 +11,7 @@
   text-rendering: optimizeLegibility;
   display: flex;
   align-items: baseline;
-  position: relative;
+
 }
 
 @media (max-width: 450px) {

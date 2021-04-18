@@ -5,13 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>Mesto</title>
+  <title>Место</title>
 </head>
 <body class="root">
 
   <header class="header">
-    <img class="header__logo" src="./images/Vector.png" alt="Лого сайта">
-
+    <img class="header__logo" src="./images/Vector.svg" alt="Лого сайта">
   </header>
 
   <main>
@@ -19,94 +18,78 @@
     <section class="profile">
       <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
       <div class="profile__info">
-        <h1 class="profile__name">Жак-Ив Кусто<span class="profile__edit-button"></span></h1>
-        <h2 class="profile__work">Исследователь океана</h2>
+        <div class="profile__name-button"><h1 class="profile__name">Жак-Ив Кусто</h1><button type="button" class="profile__edit-button"></button></div>
+        <p class="profile__work">Исследователь океана</p>
       </div>
 
-      <div class="profile__add-button"></div>
+      <button type="button" class="profile__add-button"></button>
     </section>
 
-    <section>
-      <ul class="elements">
-        <li>
-          <figure class="elements__card">
+    <section class="elements">
+      <ul class="elements__cards">
+        <li class="elements__card">
             <img class="elements__image" src="./images/moscow.jpg" alt="Москва">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Москва</p>
-              <div class="elements__like"></div>
-             </figcaption>
-           </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Москва</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
+
         </li>
 
-        <li>
-          <figure class="elements__card">
+        <li class="elements__card">
             <img class="elements__image" src="./images/arctic.jpg" alt="Арктика">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Арктика</p>
-              <div class="elements__like"></div>
-            </figcaption>
-          </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Арктика</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
         </li>
 
-        <li>
-          <figure class="elements__card">
+        <li class="elements__card">
             <img class="elements__image" src="./images/baikal.jpg" alt="Байкал">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Байкал</p>
-              <div class="elements__like"></div>
-            </figcaption>
-          </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Байкал</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
         </li>
 
-        <li>
-          <figure class="elements__card">
+        <li class="elements__card">
             <img class="elements__image" src="./images/crimea.jpg" alt="Крым">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Крым</p>
-              <div class="elements__like"></div>
-            </figcaption>
-          </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Крым</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
         </li>
 
-        <li>
-          <figure class="elements__card">
+        <li class="elements__card">
             <img class="elements__image" src="./images/karach.jpg" alt="Карачаево-Черкесия">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Карачаево-Черкесия</p>
-              <div class="elements__like"></div>
-            </figcaption>
-          </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Карачаево-Черкесия</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
         </li>
 
-        <li>
-          <figure class="elements__card">
+        <li class="elements__card">
             <img class="elements__image" src="./images/lena-river.jpg" alt="Река Лена">
-            <figcaption class="elements__caption">
-              <p class="elements__header">Река Лена</p>
-              <div class="elements__like"></div>
-            </figcaption>
-          </figure>
+            <div class="elements__caption">
+              <h2 class="elements__header">Река Лена</h2>
+              <button type="button" class="elements__like"></button>
+            </div>
         </li>
       </ul>
     </section>
 
     <section class="popup">
-
-
       <div class="popup__container">
-        <img class="popup__close" src="./images/close_icon.png" alt="закрытие попапа">
-
-        <form class="popup__form">
-          <p class="popup__header">Редактировать профиль</p>
+        <button type="button" name="close_popup" class="popup__close"></button>
+        <form class="popup__form" name="profile-info">
+          <h2 class="popup__header">Редактировать профиль</h2>
           <input type="text" name="name" placeholder="Жак-Ив Кусто" class="popup__input-text">
           <input type="text" name="work" placeholder="Исследователь океана"  class="popup__input-text">
-
-          <input type="submit" value="Сохранить" class="popup__save-button">
+          <button type="submit" class="popup__save-button">Сохранить</button>
         </form>
 
 
       </div>
-
     </section>
 
   </main>

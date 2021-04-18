@@ -2,7 +2,14 @@
   position: absolute;
   top: -50px;
   left: 420px;
+  background-image: url('../../../images/close_icon.svg');
   transition: .3s linear;
+  width: 57px;
+  height: 57px;
+  outline: none;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
 }
 
 .popup__close:hover {
@@ -16,5 +23,7 @@
     top: -40px;
     left: 250px;
     width: 37px;
+    height: 37px;
+    background-size: cover;
   }
 }

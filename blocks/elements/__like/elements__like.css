@@ -4,6 +4,10 @@
    background-repeat: no-repeat;
    background-position: center;
    background-image: url(../../../images/like.svg);
+   border: 0;
+   background-color: transparent;
+   padding: 0;
+   outline: none;
  }
 
  .elements__like:hover {
@@ -12,6 +16,7 @@
  }
 
  .elements__like:active {
-  background-image: url(../../../images/like_active.png);
+  background-image: url(../../../images/like_active.svg);
   cursor: pointer;
+  border: 0;
  }
