@@ -27,54 +27,6 @@
 
     <section class="elements">
       <ul class="elements__cards">
-        <li class="elements__card">
-            <img class="elements__image" src="./images/moscow.jpg" alt="Москва">
-            <div class="elements__caption">
-              <h2 class="elements__header">Москва</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-
-        </li>
-
-        <li class="elements__card">
-            <img class="elements__image" src="./images/arctic.jpg" alt="Арктика">
-            <div class="elements__caption">
-              <h2 class="elements__header">Арктика</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-        </li>
-
-        <li class="elements__card">
-            <img class="elements__image" src="./images/baikal.jpg" alt="Байкал">
-            <div class="elements__caption">
-              <h2 class="elements__header">Байкал</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-        </li>
-
-        <li class="elements__card">
-            <img class="elements__image" src="./images/crimea.jpg" alt="Крым">
-            <div class="elements__caption">
-              <h2 class="elements__header">Крым</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-        </li>
-
-        <li class="elements__card">
-            <img class="elements__image" src="./images/karach.jpg" alt="Карачаево-Черкесия">
-            <div class="elements__caption">
-              <h2 class="elements__header">Карачаево-Черкесия</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-        </li>
-
-        <li class="elements__card">
-            <img class="elements__image" src="./images/lena-river.jpg" alt="Река Лена">
-            <div class="elements__caption">
-              <h2 class="elements__header">Река Лена</h2>
-              <button type="button" class="elements__like"></button>
-            </div>
-        </li>
       </ul>
     </section>
 
@@ -93,14 +45,26 @@
     <section class="popup-add-image">
       <div class="popup__container">
         <button type="button" name="close_popup-add-image" id="close_popup-add-image" class="popup__close"></button>
-        <form class="popup__form" name="profile-info">
+        <form class="popup__form" name="add-aimge" id="add-image">
           <h2 class="popup__header">Новое место</h2>
-          <input type="text" name="name" placeholder="Название" class="popup__input-text">
-          <input type="text" name="work" placeholder="Ссылка на картинку"  class="popup__input-text">
-          <button type="submit" class="popup__save-button">Создать</button>
+          <input type="text" name="name" placeholder="Название" class="popup__input-text" id="image-name">
+          <input type="text" name="src" placeholder="Ссылка на картинку"  class="popup__input-text" id="image-src">
+          <button type="submit" class="popup__save-button" id="create-card">Создать</button>
         </form>
       </div>
     </section>
+
+    <template id="card-template">
+      <li class="elements__card">
+        <button type="button" class="elements__trash"></button>
+        <img class="elements__image" src="./images/moscow.jpg" alt="Москва">
+        <div class="elements__caption">
+          <h2 class="elements__header"></h2>
+          <button type="button" class="elements__like"></button>
+        </div>
+      </li>
+    </template>
+
 
   </main>
 
@@ -112,6 +76,7 @@
   <script src="./blocks/profile/__edit-button/profile__edit-button.js"></script>
   <script src="./blocks/popup/__form/popup__form.js"></script>
   <script src="./blocks/popup-add-image/popup-add-image.js"></script>
+  <script src="./blocks/elements/__like/elements__like_active.js"></script>
 
   </body>
 </html>

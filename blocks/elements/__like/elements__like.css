@@ -14,9 +14,3 @@
   background-image: url(../../../images/like_hover.svg);
   cursor: pointer;
  }
-
- .elements__like:active {
-  background-image: url(../../../images/like_active.svg);
-  cursor: pointer;
-  border: 0;
- }
