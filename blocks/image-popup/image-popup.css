@@ -1,5 +1,5 @@
 .image-popup {
-  display: none;
+  visibility: hidden;
   width: 100%;
   min-height: 100%;
   position: fixed;
@@ -9,6 +9,10 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  -moz-transition: visibility 0s, opacity 0.5s linear;
+  -o-transition: visibility 0s, opacity 0.5s linear;
 }
 
 .image-popup::after {
