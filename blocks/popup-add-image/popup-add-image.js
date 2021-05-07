@@ -63,13 +63,28 @@ function createCard(card) {
   function likeCard() {
     likeButton.classList.toggle('elements__like_active');
   }
+  function openImagePopup() {
+    imagePopup.classList.toggle('popup_opened');
+    console.log('click!!!');
+  }
 
   const newCard = cardTemplate.content.querySelector('.elements__card').cloneNode(true);
+
   newCard.querySelector('.elements__header').textContent = card.name;
   newCard.querySelector('.elements__image').src = card.link;
   newCard.querySelector('.elements__image').alt = card.name;
+  newCard.querySelector('.image-popup__image').src = card.link;
+  newCard.querySelector('.image-popup__image').alt = card.name;
+  newCard.querySelector('.image-popup__header').textContent = card.name;
+
   const cardRemoveButton = newCard.querySelector('.elements__trash');
   const likeButton = newCard.querySelector('.elements__like');
+  const imagePopupOpen = newCard.querySelector('.elements__image');
+
+  const closeImagePopup = newCard.querySelector('.image-popup__close');
+
+  const imagePopup = newCard.querySelector('.image-popup');
+
   cardsList.prepend(newCard);
 
 // Ждем клик по кнопке удалить
@@ -77,6 +92,16 @@ cardRemoveButton.addEventListener('click', removeCard);
 
 // Ждем клик по кнопке лайк
 likeButton.addEventListener('click', likeCard);
+
+// Ждем клик по картинке для открытия попапа
+imagePopupOpen.addEventListener('click', openImagePopup);
+
+
+//Ждем клик по крестику для закрытия попапа картинки
+closeImagePopup.addEventListener('click', openImagePopup);
+
+
+
 
 }
 
