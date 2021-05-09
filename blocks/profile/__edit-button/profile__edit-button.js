@@ -1,18 +1,18 @@
 /* открытие попапа */
-let editButton = document.querySelector('.profile__edit-button');
+const editButton = document.querySelector('.profile__edit-button');
 
 function openPopup() {
-  let popupWindow = document.querySelector('.popup').classList;
+  const popupWindow = document.querySelector('.popup').classList;
   popupWindow.add('popup_opened');
 }
 
 function fillForm() {
   /* вставка данных пользователя в поля формы */
-let userName = document.querySelector('.profile__name');
-let userWork = document.querySelector('.profile__work');
+const userName = document.querySelector('.profile__name');
+const userWork = document.querySelector('.profile__work');
 
-let userFormName = document.querySelectorAll('.popup__input-text')[0];
-let userFormWork = document.querySelectorAll('.popup__input-text')[1];
+const userFormName = document.querySelectorAll('.popup__input-text')[0];
+const userFormWork = document.querySelectorAll('.popup__input-text')[1];
 
   userFormName.setAttribute('value', userName.textContent);
   userFormWork.setAttribute('value', userWork.textContent);

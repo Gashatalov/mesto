@@ -1,13 +1,15 @@
-let submitForm = document.querySelector('.popup__form');
+// Сохранение данных пользователя
+
+const submitForm = document.querySelector('.popup__form');
 
 function saveUserInfo (evt) {
 
   evt.preventDefault();
-  let userName = document.querySelector('.profile__name');
-  let userWork = document.querySelector('.profile__work');
+  const userName = document.querySelector('.profile__name');
+  const userWork = document.querySelector('.profile__work');
 
-  let userFormName = document.querySelectorAll('.popup__input-text')[0];
-  let userFormWork = document.querySelectorAll('.popup__input-text')[1];
+  const userFormName = document.querySelectorAll('.popup__input-text')[0];
+  const userFormWork = document.querySelectorAll('.popup__input-text')[1];
 
   userName.textContent = userFormName.value;
   userWork.textContent =  userFormWork.value;
@@ -15,7 +17,7 @@ function saveUserInfo (evt) {
 
 function closePopup() {
 
-  let popupWindow = document.querySelector('.popup').classList;
+  const popupWindow = document.querySelector('.popup').classList;
   popupWindow.remove('popup_opened');
 
 
@@ -27,5 +29,5 @@ function saveFormClosePopup(evt) {
 }
 
 
-/* ждем клик по кнопке "сохранить" */
+// ждем клик по кнопке "сохранить"
 submitForm.addEventListener('submit', saveFormClosePopup);

@@ -1,3 +1,76 @@
+// открытие попапа
+const editButton = document.querySelector('.profile__edit-button');
+
+function openPopup() {
+  const popupWindow = document.querySelector('.popup').classList;
+  popupWindow.add('popup_opened');
+}
+
+function fillForm() {
+  // вставка данных пользователя в поля формы
+const userName = document.querySelector('.profile__name');
+const userWork = document.querySelector('.profile__work');
+
+const userFormName = document.querySelectorAll('.popup__input-text')[0];
+const userFormWork = document.querySelectorAll('.popup__input-text')[1];
+
+  userFormName.setAttribute('value', userName.textContent);
+  userFormWork.setAttribute('value', userWork.textContent);
+}
+
+// Единая фукнция при клике не кнопку
+function openPopupFillForm() {
+  openPopup();
+  fillForm();
+}
+
+// ждем клик по кнопке edit
+editButton.addEventListener('click', openPopupFillForm);
+
+// Закрытие попапа
+const closeButton = document.querySelector('.popup__close');
+
+function closePopup() {
+  const popupWindow = document.querySelector('.popup').classList;
+  popupWindow.remove('popup_opened');
+}
+
+closeButton.addEventListener('click', closePopup);
+
+// Сохранение данных пользователя
+
+const submitForm = document.querySelector('.popup__form');
+
+function saveUserInfo (evt) {
+
+  evt.preventDefault();
+  const userName = document.querySelector('.profile__name');
+  const userWork = document.querySelector('.profile__work');
+
+  const userFormName = document.querySelectorAll('.popup__input-text')[0];
+  const userFormWork = document.querySelectorAll('.popup__input-text')[1];
+
+  userName.textContent = userFormName.value;
+  userWork.textContent =  userFormWork.value;
+}
+
+function closePopup() {
+
+  const popupWindow = document.querySelector('.popup').classList;
+  popupWindow.remove('popup_opened');
+
+
+}
+
+function saveFormClosePopup(evt) {
+  saveUserInfo(evt);
+  closePopup();
+}
+
+
+// ждем клик по кнопке "сохранить"
+submitForm.addEventListener('submit', saveFormClosePopup);
+
 // Открытие попапа добавления изображения
 let addButton = document.querySelector('.profile__add-button');
 
@@ -132,6 +205,8 @@ function addCardClosePopup(evt) {
 }
 
 addImageForm.addEventListener('submit', addCardClosePopup);
+
+
 
 
 
