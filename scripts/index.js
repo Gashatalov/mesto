@@ -18,7 +18,7 @@ const userFormWork = document.querySelectorAll('.popup__input-text')[1];
   userFormWork.setAttribute('value', userWork.textContent);
 }
 
-// Единая фукнция при клике не кнопку
+// Единая фукнция при клике на кнопку
 function openPopupFillForm() {
   openPopup();
   fillForm();
@@ -67,15 +67,16 @@ function saveFormClosePopup(evt) {
   closePopup();
 }
 
-
 // ждем клик по кнопке "сохранить"
 submitForm.addEventListener('submit', saveFormClosePopup);
 
+
+
 // Открытие попапа добавления изображения
-let addButton = document.querySelector('.profile__add-button');
+const addButton = document.querySelector('.profile__add-button');
 
 function openPopupAddImage() {
-  let popupWindow = document.querySelector('.popup-add-image').classList;
+  const popupWindow = document.querySelector('.popup-add-image').classList;
   popupWindow.add('popup_opened');
 }
 
@@ -83,10 +84,10 @@ function openPopupAddImage() {
 addButton.addEventListener('click', openPopupAddImage);
 
 // Закрытие попапа доавления изобржения
-let closeButtonAddImage = document.getElementById('close_popup-add-image');
+const closeButtonAddImage = document.getElementById('close_popup-add-image');
 
 function closePopupAddImage() {
-  let popupWindow = document.querySelector('.popup-add-image').classList;
+  const popupWindow = document.querySelector('.popup-add-image').classList;
   popupWindow.remove('popup_opened');
 }
 
@@ -136,8 +137,23 @@ function createCard(card) {
   function likeCard() {
     likeButton.classList.toggle('elements__like_active');
   }
+
+
+  function closeImagePopup() {
+    imagePopup.classList.remove('popup_opened');
+  }
+    const closeImagePopupButton = document.querySelector('.image-popup__close');
+
+
+//Ждем клик по крестику для закрытия попапа картинки
+closeImagePopupButton.addEventListener('click', closeImagePopup);
+
+
   function openImagePopup() {
     imagePopup.classList.toggle('popup_opened');
+    document.querySelector('.image-popup__image').src = card.link;
+    document.querySelector('.image-popup__image').alt = card.name;
+    document.querySelector('.image-popup__header').textContent = card.name;
    }
 
   const newCard = cardTemplate.content.querySelector('.elements__card').cloneNode(true);
@@ -145,17 +161,12 @@ function createCard(card) {
   newCard.querySelector('.elements__header').textContent = card.name;
   newCard.querySelector('.elements__image').src = card.link;
   newCard.querySelector('.elements__image').alt = card.name;
-  newCard.querySelector('.image-popup__image').src = card.link;
-  newCard.querySelector('.image-popup__image').alt = card.name;
-  newCard.querySelector('.image-popup__header').textContent = card.name;
+
 
   const cardRemoveButton = newCard.querySelector('.elements__trash');
   const likeButton = newCard.querySelector('.elements__like');
   const imagePopupOpen = newCard.querySelector('.elements__image');
-
-  const closeImagePopup = newCard.querySelector('.image-popup__close');
-
-  const imagePopup = newCard.querySelector('.image-popup');
+  const imagePopup = document.querySelector('.image-popup');
 
   cardsList.prepend(newCard);
 
@@ -169,8 +180,10 @@ likeButton.addEventListener('click', likeCard);
 imagePopupOpen.addEventListener('click', openImagePopup);
 
 
-//Ждем клик по крестику для закрытия попапа картинки
-closeImagePopup.addEventListener('click', openImagePopup);
+
+
+
+
 
 
 
@@ -184,7 +197,6 @@ initialCards.forEach(function(card) {
 
 
 // Добавление карточки пользователем
-
 const addImageForm = document.getElementById('add-image');
 
 function addUserImage (evt) {
@@ -205,6 +217,8 @@ function addCardClosePopup(evt) {
 }
 
 addImageForm.addEventListener('submit', addCardClosePopup);
+
+
 
 
 
