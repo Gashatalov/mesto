@@ -1,7 +1,7 @@
 .popup__close {
   position: absolute;
   top: -50px;
-  left: 420px;
+  right: -57px;
   background-image: url('../../../images/close_icon.svg');
   transition: .3s linear;
   width: 57px;
@@ -21,7 +21,7 @@
 @media (max-width: 550px) {
   .popup__close {
     top: -40px;
-    left: 250px;
+    right: 0px;
     width: 37px;
     height: 37px;
     background-size: cover;
