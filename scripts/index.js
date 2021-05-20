@@ -185,6 +185,18 @@ function addCardClosePopup(evt) {
 
 addImageForm.addEventListener('submit', addCardClosePopup);
 
+// Закрытие попапов при клике по фону
+function closePopupOverlayClick (popupType, event) {
+  if (event.target === event.currentTarget) {
+    closePopup(popupType);}
+
+}
+
+popupAddImg.addEventListener('click', function () {closePopupOverlayClick(popupAddImg, event)});
+popupEdit.addEventListener('click', function () {closePopupOverlayClick(popupEdit, event)});
+popupImage.addEventListener('click', function () {closePopupOverlayClick(popupImage, event)});
+
+
 
 
 
