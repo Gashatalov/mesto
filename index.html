@@ -35,9 +35,11 @@
         <button type="button" name="close_popup" class="popup__close" id="closebutton_popupedit"></button>
         <form class="popup__form" name="profile-info">
           <h2 class="popup__header">Редактировать профиль</h2>
-          <input type="text" name="name" placeholder="Жак-Ив Кусто" class="popup__input-text" id="userformname" required>
-          <input type="text" name="work" placeholder="Исследователь океана"  class="popup__input-text" id="userformwork" required>
-          <button type="submit" class="popup__save-button">Сохранить</button>
+          <input type="text" name="name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" class="popup__input popup__input-text" id="userformname" required>
+          <span class="popup__error" id="userformname-error">#</span>
+          <input type="text" name="work" placeholder="Исследователь океана"  minlength="2" maxlength="200" class="popup__input popup__input-text" id="userformwork" required>
+          <span class="popup__error" id="userformwork-error">#</span>
+          <button type="submit" class="popup__save-button popup__button" id="saveprofile">Сохранить</button>
         </form>
       </div>
     </section>
@@ -47,9 +49,11 @@
         <button type="button" name="close_popup-add-image" id="close_popup-add-image" class="popup__close"></button>
         <form class="popup__form" name="add-image" id="add-image">
           <h2 class="popup__header">Новое место</h2>
-          <input type="text" name="name" placeholder="Название" class="popup__input-text" id="image-name" required>
-          <input type="text" name="src" placeholder="Ссылка на картинку"  class="popup__input-text" id="image-src" required>
-          <button type="submit" class="popup__save-button" id="create-card">Создать</button>
+          <input type="text" name="name" placeholder="Название" class="popup__input popup__input-text" id="image-name" minlength="2" maxlength="30" required>
+          <span class="popup__error" id="image-name-error">Вы пропустили это поле.</span>
+          <input type="url" name="src" placeholder="Ссылка на картинку"  class="popup__input popup__input-text" id="image-src" required>
+          <span class="popup__error" id="image-src-error">Введите ссылку на картинку.</span>
+          <button type="submit" class="popup__save-button popup__button" id="create-card">Создать</button>
         </form>
       </div>
     </section>
@@ -84,6 +88,7 @@
     <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
   </footer>
 
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js"></script>
   </body>
 </html>

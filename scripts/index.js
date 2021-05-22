@@ -21,21 +21,27 @@ const cardTemplate = document.getElementById('card-template');
 const addImageForm = document.getElementById('add-image');
 const userImageName = document.getElementById('image-name');
 const userImageSrc = document.getElementById('image-src');
-
-
 const cardImage = document.querySelector('.image-popup__image');
 const cardImageTitle = document.querySelector('.image-popup__header');
 
 
 
+function escClosePopup (e, popupType) {
+  if(e.keyCode === 27) {
+    closePopup(popupType);
 
+  }
+}
 
 // Единые функции открытия и закрытия попапов
 function openPopup(popupType) {
   popupType.classList.add('popup_opened');
+  document.addEventListener('keydown', function (e) {escClosePopup(e, popupType)});
 }
+
 function closePopup(popupType) {
   popupType.classList.remove('popup_opened');
+  document.removeEventListener('keydown', function (e) {escClosePopup(e, popupType)});
 }
 
 
@@ -52,6 +58,7 @@ function fillForm() {
 function openPopupFillForm() {
   openPopup(popupEdit);
   fillForm();
+
 }
 
 // Ждем клик по кнопке edit
@@ -196,7 +203,14 @@ popupAddImg.addEventListener('click', function () {closePopupOverlayClick(popupA
 popupEdit.addEventListener('click', function () {closePopupOverlayClick(popupEdit, event)});
 popupImage.addEventListener('click', function () {closePopupOverlayClick(popupImage, event)});
 
-
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+});
 
 
 
