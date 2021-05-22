@@ -29,7 +29,6 @@ const cardImageTitle = document.querySelector('.image-popup__header');
 function escClosePopup (e, popupType) {
   if(e.keyCode === 27) {
     closePopup(popupType);
-
   }
 }
 
@@ -59,10 +58,26 @@ function openPopupFillForm() {
   openPopup(popupEdit);
   fillForm();
 
+  const buttonSave = document.getElementById('saveprofile');
+  const inputList = [
+    document.getElementById('userformname'),
+    document.getElementById('userformwork')
+  ]
+
+  const config = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+  };
+
+    toggleButtonState(buttonSave, inputList, config);
 }
 
 // Ждем клик по кнопке edit
-editButton.addEventListener('click', openPopupFillForm);
+editButton.addEventListener('click', function () {openPopupFillForm()});
 
 // Сохранение данных пользователя
 function saveUserInfo (evt) {
