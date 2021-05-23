@@ -1,6 +1,3 @@
-
-
-
 function hideInputError (formElement, inputElement, config) {
   const {inputErrorClass, errorClass } = config;
   inputElement.classList.remove(inputErrorClass);
@@ -19,24 +16,20 @@ function showInputError (formElement, inputElement, config) {
 
 function checkInputValidity (formElement, inputElement, config) {
 
-
-   if (inputElement.validity.valid) {
+  if (inputElement.validity.valid) {
     hideInputError(formElement, inputElement, config);
   } else {
     showInputError(formElement, inputElement, config);
   }
-
 }
 
-function validityState(inputList) {
+function hasInputValid(inputList) {
    return inputList.some(inputElement => !inputElement.validity.valid);
-
 }
 
 function toggleButtonState(buttonElement, inputList, config) {
 const { inactiveButtonClass } = config;
-
-  if (validityState(inputList)) {
+  if (hasInputValid(inputList)) {
     buttonElement.disabled = true;
     buttonElement.classList.add(inactiveButtonClass);
   } else {
@@ -45,11 +38,7 @@ const { inactiveButtonClass } = config;
   }
 }
 
-
-
 function setEventListeners(formElement, config) {
-
-
   const { inputSelector, submitButtonSelector, ...restConfig } = config;
 
   formElement.addEventListener('submit', (event) => {
@@ -64,15 +53,9 @@ function setEventListeners(formElement, config) {
     checkInputValidity(formElement, inputElement, restConfig);
     toggleButtonState(buttonElement, inputList, restConfig);
    })
-
  });
-
  toggleButtonState(buttonElement, inputList, restConfig);
-
-
-
 }
-
 
 function enableValidation (config) {
   const { formSelector, ...restConfig } = config;
@@ -80,11 +63,4 @@ function enableValidation (config) {
   formList.forEach((formElement) => {
     setEventListeners(formElement, restConfig);
   })
-
 }
-
-
-
-
-
-

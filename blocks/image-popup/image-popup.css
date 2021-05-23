@@ -1,8 +1,3 @@
-.image-popup {
-
-}
-
-
 .image-popup::after {
   content: '';
   position: absolute;

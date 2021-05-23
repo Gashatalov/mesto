@@ -1,6 +1,5 @@
 .popup__input-text {
   display: block;
-
   font-family: 'Inter', Arial, sans-serif;
   color: #000000;
   font-weight: 400;
@@ -11,9 +10,4 @@
   border: 0;
   border-bottom: 1px solid rgb(0, 0, 0, 0.2);
   position: relative;
-
-
-
 }
-
-

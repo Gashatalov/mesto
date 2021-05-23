@@ -1,16 +1,16 @@
- .elements__like {
-   height: 25px;
-   width: 25px;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-image: url(../../../images/like.svg);
-   border: 0;
-   background-color: transparent;
-   padding: 0;
-   outline: none;
- }
+.elements__like {
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../../images/like.svg);
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
+}
 
- .elements__like:hover {
+.elements__like:hover {
   opacity: 0.8;
   cursor: pointer;
  }

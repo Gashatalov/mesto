@@ -13,11 +13,8 @@
 }
 
 .image-popup__close:hover {
-  opacity: 0.6;
-  transform: rotate(45deg);
   cursor: pointer;
 }
-
 
 @media (max-width: 550px) {
   .image-popup__close {
@@ -28,5 +25,3 @@
     background-size: cover;
   }
 }
-
-

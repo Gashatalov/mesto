@@ -32,21 +32,21 @@
 
     <section class="popup popup-edit">
       <div class="popup__container">
-        <button type="button" name="close_popup" class="popup__close" id="closebutton_popupedit"></button>
-        <form class="popup__form" name="profile-info">
+        <button type="button" name="close_popup" class="popup__close" id="close-button-popup-edit"></button>
+        <form class="popup__form" name="profile-info" id="edit-form">
           <h2 class="popup__header">Редактировать профиль</h2>
-          <input type="text" name="name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" class="popup__input popup__input-text" id="userformname" required>
-          <span class="popup__error" id="userformname-error">#</span>
-          <input type="text" name="work" placeholder="Исследователь океана"  minlength="2" maxlength="200" class="popup__input popup__input-text" id="userformwork" required>
-          <span class="popup__error" id="userformwork-error">#</span>
-          <button type="submit" class="popup__save-button popup__button" id="saveprofile">Сохранить</button>
+          <input type="text" name="name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" class="popup__input popup__input-text" id="user-form-name" required>
+          <span class="popup__error" id="user-form-name-error">#</span>
+          <input type="text" name="work" placeholder="Исследователь океана"  minlength="2" maxlength="200" class="popup__input popup__input-text" id="user-form-work" required>
+          <span class="popup__error" id="user-form-work-error">#</span>
+          <button type="submit" class="popup__save-button popup__button" id="button-save-profile">Сохранить</button>
         </form>
       </div>
     </section>
 
     <section class="popup popup-add-image">
       <div class="popup__container">
-        <button type="button" name="close_popup-add-image" id="close_popup-add-image" class="popup__close"></button>
+        <button type="button" name="close_popup-add-image" id="close-popup-add-image" class="popup__close"></button>
         <form class="popup__form" name="add-image" id="add-image">
           <h2 class="popup__header">Новое место</h2>
           <input type="text" name="name" placeholder="Название" class="popup__input popup__input-text" id="image-name" minlength="2" maxlength="30" required>
@@ -66,8 +66,6 @@
       </div>
     </section>
 
-
-
     <template id="card-template">
       <li class="elements__card">
         <button type="button" class="elements__trash"></button>
@@ -78,10 +76,6 @@
         </div>
       </li>
     </template>
-
-
-
-
   </main>
 
   <footer class="footer">

@@ -4,6 +4,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 .header::after {
   content: '';
   position: absolute;
@@ -14,4 +15,3 @@
   bottom: 0;
   right: 0;
 }
-
