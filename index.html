@@ -1,88 +1,153 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
-  <title>Место</title>
-</head>
-<body class="root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
+  </head>
+  <body class="root">
+    <header class="header">
+      <img class="header__logo" src="./images/Vector.svg" alt="Лого сайта" />
+    </header>
 
-  <header class="header">
-    <img class="header__logo" src="./images/Vector.svg" alt="Лого сайта">
-  </header>
-
-  <main>
-
-    <section class="profile">
-      <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar">
-      <div class="profile__info">
-        <div class="profile__name-button"><h1 class="profile__name">Жак-Ив Кусто</h1><button type="button" class="profile__edit-button"></button></div>
-        <p class="profile__work">Исследователь океана</p>
-      </div>
-
-      <button type="button" class="profile__add-button"></button>
-    </section>
-
-    <section class="elements">
-      <ul class="elements__cards">
-      </ul>
-    </section>
-
-    <section class="popup popup-edit">
-      <div class="popup__container">
-        <button type="button" name="close_popup" class="popup__close" id="close-button-popup-edit"></button>
-        <form class="popup__form" name="profile-info" id="edit-form">
-          <h2 class="popup__header">Редактировать профиль</h2>
-          <input type="text" name="name" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" class="popup__input popup__input-text" id="user-form-name" required>
-          <span class="popup__error" id="user-form-name-error">#</span>
-          <input type="text" name="work" placeholder="Исследователь океана"  minlength="2" maxlength="200" class="popup__input popup__input-text" id="user-form-work" required>
-          <span class="popup__error" id="user-form-work-error">#</span>
-          <button type="submit" class="popup__save-button popup__button" id="button-save-profile">Сохранить</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="popup popup-add-image">
-      <div class="popup__container">
-        <button type="button" name="close_popup-add-image" id="close-popup-add-image" class="popup__close"></button>
-        <form class="popup__form" name="add-image" id="add-image">
-          <h2 class="popup__header">Новое место</h2>
-          <input type="text" name="name" placeholder="Название" class="popup__input popup__input-text" id="image-name" minlength="2" maxlength="30" required>
-          <span class="popup__error" id="image-name-error">Вы пропустили это поле.</span>
-          <input type="url" name="src" placeholder="Ссылка на картинку"  class="popup__input popup__input-text" id="image-src" required>
-          <span class="popup__error" id="image-src-error">Введите ссылку на картинку.</span>
-          <button type="submit" class="popup__save-button popup__button" id="create-card">Создать</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="popup image-popup">
-      <div class="image-popup__container">
-        <button type="button" name="close_image-popup" id="close_image-popup" class="popup__close image-popup__close"></button>
-        <img class="image-popup__image" src="#" alt="#">
-        <h2 class="image-popup__header"></h2>
-      </div>
-    </section>
-
-    <template id="card-template">
-      <li class="elements__card">
-        <button type="button" class="elements__trash"></button>
-        <img class="elements__image" src="''" alt="" id="elements__image">
-        <div class="elements__caption">
-          <h2 class="elements__header"></h2>
-          <button type="button" class="elements__like"></button>
+    <main>
+      <section class="profile">
+        <img src="./images/avatar.jpg" alt="аватар" class="profile__avatar" />
+        <div class="profile__info">
+          <div class="profile__name-button">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button type="button" class="profile__edit-button"></button>
+          </div>
+          <p class="profile__work">Исследователь океана</p>
         </div>
-      </li>
-    </template>
-  </main>
 
-  <footer class="footer">
-    <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
-  </footer>
+        <button type="button" class="profile__add-button"></button>
+      </section>
 
-  <script src="./scripts/validate.js"></script>
-  <script src="./scripts/index.js"></script>
+      <section class="elements">
+        <ul class="elements__cards"></ul>
+      </section>
+
+      <section class="popup popup-edit">
+        <div class="popup__container">
+          <button
+            type="button"
+            name="close_popup"
+            class="popup__close"
+            id="close-button-popup-edit"
+          ></button>
+          <form class="popup__form" name="profile-info" id="edit-form">
+            <h2 class="popup__header">Редактировать профиль</h2>
+            <input
+              type="text"
+              name="name"
+              placeholder="Жак-Ив Кусто"
+              minlength="2"
+              maxlength="40"
+              class="popup__input popup__input-text"
+              id="user-form-name"
+              required
+            />
+            <span class="popup__error" id="user-form-name-error">#</span>
+            <input
+              type="text"
+              name="work"
+              placeholder="Исследователь океана"
+              minlength="2"
+              maxlength="200"
+              class="popup__input popup__input-text"
+              id="user-form-work"
+              required
+            />
+            <span class="popup__error" id="user-form-work-error">#</span>
+            <button
+              type="submit"
+              class="popup__save-button popup__button"
+              id="button-save-profile"
+            >
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="popup popup-add-image">
+        <div class="popup__container">
+          <button
+            type="button"
+            name="close_popup-add-image"
+            id="close-popup-add-image"
+            class="popup__close"
+          ></button>
+          <form class="popup__form" name="add-image" id="add-image">
+            <h2 class="popup__header">Новое место</h2>
+            <input
+              type="text"
+              name="name"
+              placeholder="Название"
+              class="popup__input popup__input-text"
+              id="image-name"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="popup__error" id="image-name-error"
+              >Вы пропустили это поле.</span
+            >
+            <input
+              type="url"
+              name="src"
+              placeholder="Ссылка на картинку"
+              class="popup__input popup__input-text"
+              id="image-src"
+              required
+            />
+            <span class="popup__error" id="image-src-error"
+              >Введите ссылку на картинку.</span
+            >
+            <button
+              type="submit"
+              class="popup__save-button popup__button"
+              id="create-card"
+            >
+              Создать
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="popup image-popup">
+        <div class="image-popup__container">
+          <button
+            type="button"
+            name="close_image-popup"
+            id="close_image-popup"
+            class="popup__close image-popup__close"
+          ></button>
+          <img class="image-popup__image" src="#" alt="#" />
+          <h2 class="image-popup__header"></h2>
+        </div>
+      </section>
+
+      <template id="card-template">
+        <li class="elements__card">
+          <button type="button" class="elements__trash"></button>
+          <img class="elements__image" src="''" alt="" id="elements__image" />
+          <div class="elements__caption">
+            <h2 class="elements__header"></h2>
+            <button type="button" class="elements__like"></button>
+          </div>
+        </li>
+      </template>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+    </footer>
+
+    <script src="./scripts/validate.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
