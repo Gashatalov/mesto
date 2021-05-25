@@ -60,7 +60,9 @@ function fillForm() {
 function openPopupFillForm() {
   fillForm();
   openPopup(popupEdit);
-  enableSubmitButton(configValidation);
+  const buttonSave = popupEdit.querySelector(".popup__button");
+  const inputList = [userFormName, userFormWork];
+  toggleButtonState(buttonSave, inputList, configValidation);
 }
 
 // Ждем клик по кнопке edit

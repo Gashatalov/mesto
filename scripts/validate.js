@@ -46,13 +46,6 @@ function toggleButtonState(buttonElement, inputList, config) {
   }
 }
 
-function enableSubmitButton(configValidation) {
-  const { inactiveButtonClass } = configValidation;
-  buttonSave = document.getElementById("button-save-profile");
-  buttonSave.disabled = false;
-  buttonSave.classList.remove(inactiveButtonClass);
-}
-
 function setEventListeners(formElement, config) {
   const { inputSelector, submitButtonSelector, ...restConfig } = config;
 
